@@ -2,9 +2,9 @@
   <%= note.content %>
   <div>
     <%= link_to edit_note_url(note), remote: true do %>
-      <i class="icon-edit"></i>
+      <i class="fa fa-edit"></i>
     <% end %>
 
-    <%= link_to '<i class="icon-trash"></i>'.html_safe, note_url(note), method: 'delete', remote: true %>
+    <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, note_url(note), method: 'delete', remote: true %>
   </div>
 </li>

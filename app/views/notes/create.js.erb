@@ -1,2 +1,5 @@
-$("ul").append("<%= escape_javascript(render('note', :note => @note)) %>");
+<% publish_to "/notes" do %>
+  $("ul").append("<%= escape_javascript(render('note', :note => @note)) %>");
+<% end %>
+
 $("#new_note #note_content").val("");

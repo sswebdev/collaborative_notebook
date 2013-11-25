@@ -22,11 +22,11 @@ $(document).ready(function() {
     alert("Hello");
   })
 
-  $('ul').on("click", "li", function() {
+  $('#notes').on("click", "li", function() {
     $.ajax({url: "/notes/" + $(this).data("note-id") + "/edit", dataType: "script"});
   })
 
-  $('li').draggable();
+  $('.note').draggable();
 
   $('#trash').droppable({ drop: function(event, ui) {
     $.ajax({
@@ -36,27 +36,3 @@ $(document).ready(function() {
     });
   }});
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

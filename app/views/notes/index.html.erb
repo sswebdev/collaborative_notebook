@@ -1,7 +1,7 @@
 <div id="trash" style="border: thin red solid; width: 100%; height: 200px">
 </div>
 
-<ul>
+<ul id="notes">
   <% @notes.each do |n| %>
     <%= render 'note', { :note => n } %>
   <% end %>

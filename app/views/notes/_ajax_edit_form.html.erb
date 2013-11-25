@@ -1,0 +1,5 @@
+<li id="edit_note_<%= @note.id %>_form">
+  <%= form_for @note, remote: true do |f| %>
+    <%= f.text_field :content %>
+  <% end %>
+</li>

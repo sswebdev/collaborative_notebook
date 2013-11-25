@@ -1,0 +1,10 @@
+<ul>
+  <% @notes.each do |n| %>
+    <%= render 'note', { :note => n } %>
+  <% end %>
+  <%#= render @notes %>
+</ul>
+
+<%= form_for Note.new, remote: true do |f| %>
+  <%= f.text_field :content, placeholder: 'Add a new aha! here', size: 50 %>
+<% end %>

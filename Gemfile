@@ -5,6 +5,8 @@ gem 'rails', '4.0.1'
 
 gem 'starter_generators'
 
+gem 'jquery-ui-rails'
+
 gem "private_pub"
 gem "thin"
 

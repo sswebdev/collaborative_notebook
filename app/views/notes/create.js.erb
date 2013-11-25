@@ -1,5 +1,11 @@
 <% publish_to "/notes" do %>
-  $("ul").append("<%= escape_javascript(render('note', :note => @note)) %>");
+  $("ul").append("<%= j(render 'note', :note => @note) %>");
 <% end %>
 
 $("#new_note #note_content").val("");
+
+$('#<%= dom_id @note %>').on("click", function() {
+  $.ajax({url: "/notes/" + $(this).data("note-id") + "/edit", dataType: "script"});
+})
+
+$('#<%= dom_id @note %>').draggable();

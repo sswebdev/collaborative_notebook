@@ -28,7 +28,7 @@ class NotesController < ApplicationController
     else
       respond_to do |format|
         format.html { render 'new' }
-        format.js { render js: 'alert("NOOooooo."); '}
+        format.js   { render js: 'alert("NOOooooo.");' }
       end
     end
   end
@@ -45,16 +45,14 @@ class NotesController < ApplicationController
 
     if @note.save
       respond_to do |format|
-        format.html do
-          redirect_to notes_url, notice: "Note updated successfully."
-        end
-
-        format.js do
-          render 'update'
-        end
+        format.html { redirect_to notes_url, notice: "Note updated successfully." }
+        format.js
       end
     else
-      render 'edit'
+      respond_to do |format|
+        format.html { render 'edit' }
+        format.js   { render js: 'alert("NOOooooo.");' }
+      end
     end
   end
 
@@ -62,19 +60,8 @@ class NotesController < ApplicationController
     @note.destroy
 
     respond_to do |format|
-      format.html do
-        redirect_to notes_url, notice: "Note deleted."
-      end
+      format.html { redirect_to notes_url, notice: "Note deleted." }
       format.js
     end
-
   end
 end
-
-
-
-
-
-
-
-

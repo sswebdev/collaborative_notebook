@@ -1,3 +1,16 @@
 == NOTEBOOK
 
 Within this app, we are going to practice managing a CRUD resource -- only this time, with Ajax rather than with traditional HTML request/response.
+
+#### Killing leftover processes
+
+Example below assumes port used is 9292:
+
+    lsof -i :9292
+
+This gives you the pid of the process, say 34564, then kill it with:
+
+    kill -9 34564
+
+If you are on windows, install cygwin to get lsof and kill commands.
+

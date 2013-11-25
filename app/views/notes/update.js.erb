@@ -1,1 +1,11 @@
+<% publish_to "/notes" do %>
+  $('#<%= dom_id @note %>').replaceWith('<%= j(render 'note', :note => @note) %>');
+<% end %>
+
 $('#edit_note_<%= @note.id %>_form').replaceWith('<%= escape_javascript(render 'note', :note => @note) %>');
+
+$('#<%= dom_id @note %>').on("click", function() {
+  $.ajax({url: "/notes/" + $(this).data("note-id") + "/edit", dataType: "script"});
+})
+
+$('#<%= dom_id @note %>').draggable();

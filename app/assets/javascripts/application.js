@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require turbolinks
 //= require private_pub
 //= require_tree .
@@ -20,7 +21,37 @@ $(document).ready(function() {
   $("#title").on("click", function() {
     alert("Hello");
   })
+
+  $('ul').on("click", "li", function() {
+    $.ajax({url: "/notes/" + $(this).data("note-id") + "/edit", dataType: "script"});
+  })
+
+  $('li').draggable();
+
+  $('#trash').droppable({ drop: function(event, ui) {
+    $.ajax({
+      url: "/notes/" + ui.draggable.data('note-id'),
+      type: "delete",
+      dataType: "script"
+    });
+  }});
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
